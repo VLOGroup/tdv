@@ -5,7 +5,7 @@ Here, we showcase the *total deep variation* (TDV) regularizer introduced in
 
 If you use this code please cite:
 
-```
+```bibtex
 @InProceedings{KoEf20,
   Title     = {Total Deep Variation for Linear Inverse Problems},
   Author    = {Kobler, Erich and Effland, Alexander and Kunisch, Karl and Pock, Thomas},
@@ -14,4 +14,23 @@ If you use this code please cite:
 }
 ```
 
-## Requirements
+## Overview
+    .
+    +-- ddr               : data driven regularizers module
+    | +-- conv.py         : implementation of forward/backward convolution operators
+    | +-- regularizer.py  : interface for regularizers
+    | +-- tdv.py          : implementation of the TDV regularizer
+    +-- data              : sample images
+    +-- checkpoints       : pytorch checkpoint files
+    +-- figures           : figures for plotting
+    +-- denoise.py        : simple script to run gray-scale/color denoising
+    +-- eigenfunctions.py : visualization of an eigenfunction of the TDV regularizer
+
+## Gaussian Image Denoising
+![alt](./figures/denoise-sequence.png "Gaussian image denoising")
+
+## Single Image Super-resolution
+![alt](./figures/sr-sequence.png "Single image super-resolution")
+
+## Non-linear Eigenfunction Analysis
+![alt](./figures/eigenfunctions.png "Eigenfunctions of the TDV regularizers")
