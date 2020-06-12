@@ -49,7 +49,7 @@ mask = torch.from_numpy(mask[None,None]).cuda()
 # define the objective
 def loss(x):
     grad_R = vn.R.grad(x)
-    # compute the Relay quotient
+    # compute the Rayleigh quotient
     Lambda = torch.sum((x)* x, (1,2,3), keepdim=True) / torch.sum(x**2, (1,2,3), keepdim=True)
     return torch.mean((grad_R - Lambda * x)**2)
 
