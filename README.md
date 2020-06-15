@@ -26,6 +26,14 @@ If you use this code please cite:
     +-- denoise.py        : simple script to run gray-scale/color denoising
     +-- eigenfunctions.py : visualization of an eigenfunction of the TDV regularizer
 
+## Requirements
+- numpy
+- imageio
+- pytorch
+- scikit-image
+- [optox](https://github.com/VLOGroup/optox)
+- matplotlib
+
 ## Gaussian Image Denoising
 ![alt](./figures/denoise-sequence.png "Gaussian image denoising")
 

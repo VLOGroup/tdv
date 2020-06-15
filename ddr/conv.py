@@ -77,7 +77,6 @@ class Conv2d(torch.nn.Module):
         # then pad
         pad = weight.shape[-1]//2
         if self.pad and pad > 0:
-            # x = torch.nn.functional.pad(x, (pad,pad,pad,pad), 'reflect')
             x = optoth.pad2d.pad2d(x, (pad,pad,pad,pad), mode='symmetric')
         # compute the convolution
         return torch.nn.functional.conv2d(x, weight, self.bias, self.stride, self.padding, self.dilation, self.groups)

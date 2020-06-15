@@ -1,9 +1,5 @@
 import torch
 import torch.utils.checkpoint as cp
-import optoth
-import optoth.activations
-import optoth.rot
-import optoth.pad2d
 
 import numpy as np
 

@@ -4,7 +4,6 @@ import numpy as np
 
 from .regularizer import Regularizer
 from .conv import *
-from optoth.activations import TrainableActivation
 
 import unittest
 
