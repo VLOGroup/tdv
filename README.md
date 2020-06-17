@@ -2,6 +2,8 @@
 
 Here, we showcase the *total deep variation* (TDV) regularizer introduced in 
  - E. Kobler, A. Effland, K. Kunisch, and T. Pock, [*Total deep variation for linear inverse problems*](https://arxiv.org/abs/2001.05005), in IEEE Conference on Computer Vision and Pattern Recognition, 2020.
+- E. Kobler, A. Effland, K. Kunisch, and T. Pock, [*Total Deep Variation: A Stable Regularizer for Inverse Problems*](https://arxiv.org/abs/2006.08789), arXiv preprint arXiv:2006.08789.
+
 
 If you use this code please cite:
 
