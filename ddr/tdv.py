@@ -208,6 +208,9 @@ class TDV(Regularizer):
         # scale by the number of features
         return torch.ones_like(x) / self.num_features
 
+    def _potential(self, x):
+        return x / self.num_features
+
     def _transformation_T(self, grad_out):
         # compute the output
         grad_x = self.KN.backward(grad_out)
@@ -221,18 +224,20 @@ class TDV(Regularizer):
 
     def energy(self, x):
         x = self._transformation(x)
-        return x / self.num_features
+        return self._potential(x)
 
-    def grad(self, x):
+    def grad(self, x, get_energy=False):
         # compute the energy
         x = self._transformation(x)
+        if get_energy:
+            energy = self._potential(x)
         # and its gradient
         x = self._activation(x)
-        return self._transformation_T(x)
-
-    def get_vis(self):
-        kernels = {k: v for k, v in self.named_parameters() if 'weight' in k and len(v.shape)==4}
-        return kernels, None
+        grad = self._transformation_T(x)
+        if get_energy:
+            return energy, grad
+        else:
+            return grad
 
 
 # to run execute: python -m unittest [-v] ddr.tdv
