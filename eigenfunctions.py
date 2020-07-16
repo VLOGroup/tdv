@@ -50,7 +50,7 @@ mask = torch.from_numpy(mask[None,None]).cuda()
 def loss(x):
     grad_R = vn.R.grad(x)
     # compute the Rayleigh quotient
-    Lambda = torch.sum((x)* x, (1,2,3), keepdim=True) / torch.sum(x**2, (1,2,3), keepdim=True)
+    Lambda = torch.sum(grad_R * x, (1,2,3), keepdim=True) / torch.sum(x**2, (1,2,3), keepdim=True)
     return torch.mean((grad_R - Lambda * x)**2)
 
 # plotting
